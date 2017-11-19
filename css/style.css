@@ -1,0 +1,769 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+/* Fonts */
+@font-face {
+  font-family: 'FORTE';
+  src: url('../fonts/FORTE.eot');
+  src: url('../fonts/FORTE.eot') format('embedded-opentype'), url('../fonts/FORTE.woff2') format('woff2'), url('../fonts/FORTE.woff') format('woff'), url('../fonts/FORTE.ttf') format('truetype'), url('../fonts/FORTE.svg#FORTE') format('svg');
+}
+@font-face {
+  font-family: 'ProximaNovaBold';
+  src: url('../fonts/ProximaNovaBold.eot');
+  src: url('../fonts/ProximaNovaBold.eot') format('embedded-opentype'), url('../fonts/ProximaNovaBold.woff2') format('woff2'), url('../fonts/ProximaNovaBold.woff') format('woff'), url('../fonts/ProximaNovaBold.ttf') format('truetype'), url('../fonts/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+}
+@font-face {
+  font-family: 'ProximaNovaExtrabold';
+  src: url('../fonts/ProximaNovaExtrabold.eot');
+  src: url('../fonts/ProximaNovaExtrabold.eot') format('embedded-opentype'), url('../fonts/ProximaNovaExtrabold.woff2') format('woff2'), url('../fonts/ProximaNovaExtrabold.woff') format('woff'), url('../fonts/ProximaNovaExtrabold.ttf') format('truetype'), url('../fonts/ProximaNovaExtrabold.svg#ProximaNovaExtrabold') format('svg');
+}
+@font-face {
+  font-family: 'ProximaNovaLight';
+  src: url('../fonts/ProximaNovaLight.eot');
+  src: url('../fonts/ProximaNovaLight.eot') format('embedded-opentype'), url('../fonts/ProximaNovaLight.woff2') format('woff2'), url('../fonts/ProximaNovaLight.woff') format('woff'), url('../fonts/ProximaNovaLight.ttf') format('truetype'), url('../fonts/ProximaNovaLight.svg#ProximaNovaLight') format('svg');
+}
+@font-face {
+  font-family: 'ProximaNovaRegular';
+  src: url('../fonts/ProximaNovaRegular.eot');
+  src: url('../fonts/ProximaNovaRegular.eot') format('embedded-opentype'), url('../fonts/ProximaNovaRegular.woff2') format('woff2'), url('../fonts/ProximaNovaRegular.woff') format('woff'), url('../fonts/ProximaNovaRegular.ttf') format('truetype'), url('../fonts/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+}
+/* main settings */
+html {
+  font-size: 10px;
+}
+input {
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.09);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.09);
+  height: 4rem;
+  border: none;
+  margin-bottom: 1rem;
+}
+input::-webkit-input-placeholder {
+  position: relative;
+  color: #999999;
+  font-size: 1.4rem;
+  font-family: 'ProximaNovaRegular';
+}
+input:-ms-input-placeholder {
+  position: relative;
+  color: #999999;
+  font-size: 1.4rem;
+  font-family: 'ProximaNovaRegular';
+}
+input::placeholder {
+  position: relative;
+  color: #999999;
+  font-size: 1.4rem;
+  font-family: 'ProximaNovaRegular';
+}
+input:focus {
+  outline: none;
+}
+.countries-photo img {
+  -webkit-box-shadow: 5px 10px 20px rgba(189, 10, 170, 0.25);
+          box-shadow: 5px 10px 20px rgba(189, 10, 170, 0.25);
+}
+.bottom-button {
+  position: relative;
+  bottom: -2.5rem;
+  -webkit-box-shadow: 5px 10px 20px rgba(189, 10, 170, 0.25);
+          box-shadow: 5px 10px 20px rgba(189, 10, 170, 0.25);
+  border: none;
+  outline: none;
+  width: 25rem;
+  height: 5rem;
+  border-radius: 50px;
+  background: #f76f8d;
+  color: #ffffff;
+  font-family: 'ProximaNovaRegular';
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
+/* Colours */
+.main {
+  overflow: hidden;
+  -webkit-box-shadow: -1px 15px 20px rgba(189, 10, 170, 0.25);
+          box-shadow: -1px 15px 20px rgba(189, 10, 170, 0.25);
+  background: url(../img/main-bg.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+.main:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f04a6f;
+  opacity: .5;
+}
+.main header {
+  width: 100%;
+  height: 7rem;
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+}
+.main header .hamburger,
+.main header .cross {
+  display: none;
+  z-index: 100;
+}
+.main header .cross {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 6rem;
+  color: #ffffff;
+}
+.main header .hamburger {
+  width: 4rem;
+  height: 3rem;
+  position: absolute;
+  top: 1.7rem;
+  right: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.main header .hamburger span {
+  background: #ffffff;
+  width: 25px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  right: 0;
+}
+.main header .hamburger span:before,
+.main header .hamburger span:after {
+  background-color: #ffffff;
+  content: '';
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  right: 0;
+}
+.main header .hamburger span:before {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+.main header .hamburger span:after {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+}
+.main header .logo h1 {
+  font-family: 'FORTE';
+  color: #ffffff;
+  font-size: 2.4rem;
+  line-height: 3.5rem;
+}
+.main header .nav {
+  position: absolute;
+  right: 0;
+}
+.main header .nav ul {
+  padding: 0;
+  list-style: none;
+}
+.main header .nav ul li {
+  font-family: 'ProximaNovaRegular';
+  display: inline-block;
+  margin-right: 4rem;
+}
+.main header .nav ul li:last-child {
+  margin-right: 0;
+}
+.main header .nav ul li a {
+  text-decoration: none;
+  color: #dfbddd;
+  font-size: 1.4rem;
+  outline: none;
+  line-height: 6.5rem;
+}
+.main header .nav ul li a:hover {
+  color: #ffffff;
+  padding-bottom: 0.7rem;
+  border-bottom: 3px solid #ffffff;
+}
+.main-text {
+  margin-top: 18rem;
+  margin-bottom: 2.5rem;
+}
+.main-text h2 {
+  color: #ffffff;
+  font-size: 4.8rem;
+  line-height: 1.3;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'ProximaNovaBold';
+}
+.main-search {
+  position: relative;
+}
+.main-search-form {
+  max-width: 43rem;
+  position: relative;
+  outline: none;
+}
+.main-search-form:focus {
+  outline: none;
+  border: none;
+}
+.main-search-form input {
+  position: relative;
+  width: 75%;
+  height: 5rem;
+  border-radius: 50px;
+  padding-left: 3rem;
+  -webkit-box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+.main-search-form button {
+  position: absolute;
+  border-radius: 50px;
+  width: 25%;
+  height: 5.6rem;
+  background: #f76f8d;
+  border: none;
+  font-family: 'ProximaNovaBold';
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  right: 2rem;
+  top: -3px;
+}
+.main-search-form button:focus {
+  outline: none;
+}
+.main-search-form button i {
+  font-size: 2.5rem;
+}
+.countries {
+  background: #fdf8f9;
+}
+.countries-header h3 {
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  font-family: 'ProximaNovaBold';
+  font-size: 1.8rem;
+}
+.countries-form {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.countries-form input {
+  width: 90%;
+  padding-left: 2rem;
+}
+.countries-form form .first-input {
+  position: relative;
+  background: url(../img/icons/location.png) no-repeat 90%;
+}
+.countries-form form .second-input {
+  position: relative;
+  background: url(../img/icons/from_to.png) no-repeat 90%;
+}
+.countries-form form .third-input {
+  position: relative;
+  background: url(../img/icons/from_to.png) no-repeat 90%;
+}
+.countries-form form .fourth-input {
+  position: relative;
+  background: url(../img/icons/guests.png) no-repeat 90%;
+}
+.countries-form form button {
+  background: #f76f8d;
+  border: none;
+  outline: none;
+  width: 66%;
+  letter-spacing: 1px;
+  height: 4rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-family: 'ProximaNovaBold';
+}
+.countries-photo .large {
+  max-width: 62rem;
+}
+.countries-photo-box {
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 30rem;
+  height: 30rem;
+}
+.countries-photo-box img {
+  width: 100%;
+  height: 100%;
+}
+.countries-photo-box .caption {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(247, 111, 141, 0.5);
+  color: #ffffff;
+  text-align: center;
+}
+.countries-photo-box .caption:hover {
+  opacity: 1;
+}
+.countries-photo-box .caption .sign p {
+  font-size: 2.4rem;
+  font-family: 'ProximaNovaRegular';
+  margin-top: 2rem;
+}
+.countries-photo-box .caption .sign button {
+  margin-top: 9rem;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+.countries-photo-box .caption .sign button img {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 4rem;
+  height: 4rem;
+}
+.hotels-header {
+  margin-bottom: 4rem;
+}
+.hotels-header h3 {
+  font-size: 3rem;
+  font-family: 'ProximaNovaRegular';
+  color: #333333;
+  margin-top: 7rem;
+}
+.hotels-header p {
+  font-size: 1.8rem;
+  font-family: 'ProximaNovaLight';
+  color: #999999;
+}
+.hotels-switch button {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'ProximaNovaRegular';
+  color: #999999;
+  font-size: 1.4rem;
+  padding: 1rem 5rem;
+  margin-bottom: 4.5rem;
+}
+.hotels-switch button:hover {
+  color: #f76f8d;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+}
+.hotels-photo-text h4 {
+  font-size: 1.6rem;
+  font-family: 'ProximaNovaBold';
+  color: #333333;
+}
+.hotels-photo-text p {
+  font-family: 'ProximaNovaRegular';
+  font-size: 1.4rem;
+  color: #999999;
+}
+.hotels-photo-text .price {
+  color: #f76f8d;
+  font-size: 1.6rem;
+}
+.hotels-photo img {
+  width: 20rem;
+  height: 18.5rem;
+  float: left;
+  margin-right: 2.5rem;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.25);
+          box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.25);
+}
+.something {
+  background: #fdf8f9;
+  padding-bottom: 10rem;
+  padding-top: 12rem;
+}
+.something-content-box {
+  background: #ffffff;
+  margin: 0  auto 0 auto;
+  width: 90%;
+  max-width: 33rem;
+  height: 35rem;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 2.5rem;
+  padding-top: 1rem;
+}
+.something-content-box h5 {
+  color: #f76f8d;
+  font-size: 2.4rem;
+  font-family: 'ProximaNovaBold';
+}
+.something-content-box .faq {
+  text-transform: uppercase;
+}
+.something-content-box p {
+  line-height: 1.4;
+  color: #333333;
+  font-size: 1.4rem;
+  font-family: 'ProximaNovaRegular';
+}
+.something-content-box span {
+  font-size: 1.4rem;
+  color: #f76f8d;
+  font-family: 'ProximaNovaRegular';
+}
+.something-content-box form {
+  position: relative;
+}
+.something-content-box form input {
+  background: #f9eef1;
+  width: 100%;
+  text-transform: uppercase;
+  padding-left: 1.7rem;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+.something-content-box form input::-webkit-input-placeholder {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #333333;
+}
+.something-content-box form input:-ms-input-placeholder {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #333333;
+}
+.something-content-box form input::placeholder {
+  display: inline-block;
+  font-size: 1.6rem;
+  color: #333333;
+}
+.something-content-box form button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.something-content-box form button i {
+  display: inline-block;
+  color: #f76f8d;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 15%;
+  right: 7%;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+}
+.footer {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+.footer-label h1 {
+  color: #f76f8d;
+  font-family: 'Forte';
+  font-size: 4rem;
+  line-height: 12rem;
+}
+.footer-content {
+  padding-left: 5rem;
+}
+.footer-content p {
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+  font-family: 'ProximaNovaLight';
+  color: #333333;
+}
+.footer-content p span {
+  color: #f76f8d;
+  font-size: 1.8rem;
+  font-family: 'ProximaNovaRegular';
+}
+.footer .line hr {
+  height: 1px;
+  width: 99%;
+  background: #cccccc;
+}
+.footer-copyright {
+  padding-top: 1rem;
+  font-size: 1.4rem;
+  font-family: 'ProximaNovaLight';
+  color: #333333;
+}
+.footer-social {
+  position: relative;
+}
+.footer-social-icons {
+  position: absolute;
+  right: 0;
+}
+.footer-social-icons i {
+  margin-left: 5px;
+  line-height: 4rem;
+  color: #cccccc;
+  font-size: 3rem;
+}
+@media (max-width: 479px) {
+  input {
+    padding-top: 1.5rem;
+  }
+  html {
+    font-size: 6px;
+  }
+  html .main-text {
+    margin-top: 30%;
+  }
+  html .main-text h2 {
+    line-height: 2;
+  }
+  html .main-search input {
+    padding-top: 1.5rem;
+  }
+  html .main header .hamburger {
+    display: block;
+  }
+  html .main header .logo h1 {
+    line-height: 0;
+  }
+  html .main header .nav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    text-align: center;
+  }
+  html .main header .nav ul {
+    padding-top: 25%;
+    line-height: 4;
+    list-style: none;
+  }
+  html .main header .nav ul li {
+    display: block;
+  }
+  html .main header .nav ul li a {
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    color: #f76f8d;
+    font-size: 4rem;
+  }
+  html .main header .nav ul li a:hover {
+    color: #ffffff;
+    padding-bottom: 0;
+    border-bottom: 2px solid #ffffff;
+  }
+  html .countries .fiveth,
+  html .countries .sixth,
+  html .countries .seventh {
+    display: none;
+  }
+  html .countries-photo .large {
+    max-width: 40rem;
+  }
+  html .countries-photo-box {
+    max-width: 40rem;
+  }
+  html .countries-photo-box .caption {
+    display: none;
+  }
+  html .hotels-photo .copy {
+    display: none;
+  }
+  html .something-content-box {
+    margin: 0 auto 2rem;
+  }
+  html .footer {
+    padding-top: 2rem;
+  }
+  html .footer .line hr {
+    margin: 2rem auto;
+    width: 88%;
+  }
+  html .footer-content .customer {
+    margin-left: -3rem;
+  }
+  html .footer-copyright {
+    text-align: center;
+  }
+  html .footer-social {
+    position: relative;
+  }
+  html .footer-social-icons {
+    position: absolute;
+    left: 0;
+  }
+  html .footer-social-icons i {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  input {
+    padding-top: 1.5rem;
+  }
+  html {
+    font-size: 7.5px;
+  }
+  html .main-text {
+    margin-top: 2%;
+  }
+  html .main-search input {
+    padding-top: 1rem;
+  }
+  html .main header .hamburger {
+    display: block;
+  }
+  html .main header .logo h1 {
+    line-height: 2rem;
+  }
+  html .main header .nav {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 5;
+    text-align: center;
+  }
+  html .main header .nav ul {
+    padding-top: 5%;
+    line-height: 2;
+    list-style: none;
+  }
+  html .main header .nav ul li {
+    display: block;
+  }
+  html .main header .nav ul li a {
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    color: #f76f8d;
+    font-size: 4rem;
+  }
+  html .main header .nav ul li a:hover {
+    color: #ffffff;
+    padding-bottom: 0;
+    border-bottom: 2px solid #ffffff;
+  }
+  html .countries .fiveth,
+  html .countries .sixth,
+  html .countries .seventh {
+    display: none;
+  }
+  html .countries-photo .large {
+    max-width: 37rem;
+  }
+  html .countries-photo-box {
+    max-width: 37rem;
+  }
+  html .countries-photo-box .caption {
+    display: none;
+  }
+  html .hotels-photo .copy {
+    display: none;
+  }
+  html .something-content-box {
+    margin: 0 auto 2rem;
+  }
+  html .footer {
+    padding-top: 2rem;
+  }
+  html .footer .line hr {
+    margin: 2rem auto;
+    width: 83%;
+  }
+  html .footer-content .destinasi {
+    margin-left: 3rem;
+  }
+  html .footer-content .wahana {
+    margin-left: 3rem;
+  }
+  html .footer-copyright {
+    text-align: center;
+  }
+  html .footer-social {
+    position: relative;
+  }
+  html .footer-social-icons {
+    position: absolute;
+    left: 0;
+  }
+  html .footer-social-icons i {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 8px;
+  }
+  html .countries .third {
+    display: none;
+  }
+  html .countries-photo .large {
+    max-width: 40rem;
+  }
+  html .countries-photo-box {
+    max-width: 40rem;
+  }
+  html .countries-photo-box .caption {
+    display: none;
+  }
+  html .hotels-photo .copy {
+    display: none;
+  }
+  html .footer {
+    padding-top: 2rem;
+  }
+  html .footer .line hr {
+    margin: 2rem auto;
+    width: 83%;
+  }
+  html .footer-content .destinasi {
+    margin-left: 3rem;
+  }
+  html .footer-content .wahana {
+    margin-left: 3rem;
+  }
+  html .footer-copyright {
+    text-align: center;
+  }
+  html .footer-social {
+    position: relative;
+  }
+  html .footer-social-icons {
+    position: absolute;
+    left: 0;
+  }
+  html .footer-social-icons i {
+    font-size: 4rem;
+  }
+  form input {
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+  html {
+    font-size: 12px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

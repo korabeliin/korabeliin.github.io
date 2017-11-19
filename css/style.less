@@ -1,0 +1,855 @@
+/* Fonts */
+@font-face {
+    font-family: 'FORTE';
+    src: url('../fonts/FORTE.eot');
+    src: url('../fonts/FORTE.eot') format('embedded-opentype'),
+         url('../fonts/FORTE.woff2') format('woff2'),
+         url('../fonts/FORTE.woff') format('woff'),
+         url('../fonts/FORTE.ttf') format('truetype'),
+         url('../fonts/FORTE.svg#FORTE') format('svg');
+}
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src: url('../fonts/ProximaNovaBold.eot');
+    src: url('../fonts/ProximaNovaBold.eot') format('embedded-opentype'),
+         url('../fonts/ProximaNovaBold.woff2') format('woff2'),
+         url('../fonts/ProximaNovaBold.woff') format('woff'),
+         url('../fonts/ProximaNovaBold.ttf') format('truetype'),
+         url('../fonts/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+}
+@font-face {
+    font-family: 'ProximaNovaExtrabold';
+    src: url('../fonts/ProximaNovaExtrabold.eot');
+    src: url('../fonts/ProximaNovaExtrabold.eot') format('embedded-opentype'),
+         url('../fonts/ProximaNovaExtrabold.woff2') format('woff2'),
+         url('../fonts/ProximaNovaExtrabold.woff') format('woff'),
+         url('../fonts/ProximaNovaExtrabold.ttf') format('truetype'),
+         url('../fonts/ProximaNovaExtrabold.svg#ProximaNovaExtrabold') format('svg');
+}
+@font-face {
+    font-family: 'ProximaNovaLight';
+    src: url('../fonts/ProximaNovaLight.eot');
+    src: url('../fonts/ProximaNovaLight.eot') format('embedded-opentype'),
+         url('../fonts/ProximaNovaLight.woff2') format('woff2'),
+         url('../fonts/ProximaNovaLight.woff') format('woff'),
+         url('../fonts/ProximaNovaLight.ttf') format('truetype'),
+         url('../fonts/ProximaNovaLight.svg#ProximaNovaLight') format('svg');
+}
+@font-face {
+    font-family: 'ProximaNovaRegular';
+    src: url('../fonts/ProximaNovaRegular.eot');
+    src: url('../fonts/ProximaNovaRegular.eot') format('embedded-opentype'),
+         url('../fonts/ProximaNovaRegular.woff2') format('woff2'),
+         url('../fonts/ProximaNovaRegular.woff') format('woff'),
+         url('../fonts/ProximaNovaRegular.ttf') format('truetype'),
+         url('../fonts/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+}
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+/* main settings */
+html {
+	font-size: 10px;	
+}
+input {
+	box-shadow: 0 0 25px rgba(0,0,0,.09);
+	height: 4rem;
+	border: none;
+	margin-bottom: 1rem;
+	&::placeholder {
+		position: relative;
+		color: @gray;
+		font-size: 1.4rem;
+		font-family: 'ProximaNovaRegular';
+	}
+	&:focus {
+		outline: none;
+	}
+}
+.countries-photo {
+	img {
+		box-shadow: 5px 10px 20px rgba(189,10,170,.25);
+	}
+}
+.bottom-button {
+	position: relative;
+	bottom: -2.5rem;
+	box-shadow: 5px 10px 20px rgba(189,10,170,.25);
+	border: none;
+	outline: none;
+	width: 25rem;
+	height: 5rem;
+	border-radius: 50px;
+	background: @purple;
+	color: @white;
+	font-family: 'ProximaNovaRegular';
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	margin-top: 2rem;
+}
+
+/* Colours */
+@white: #ffffff;
+@bg-white: #fdf8f9; 
+@another-white: #f9eef1;
+@base-black: #333333;
+@pale-gray: #cccccc;
+@gray: #999999;
+@purple: #f76f8d;
+@pale-purple: #dfbddd;
+@overlay: #f04a6f;
+
+
+.main {
+	overflow: hidden;
+	box-shadow: -1px 15px 20px rgba(189,10,170,.25);
+	background: url(../img/main-bg.jpg) no-repeat center center;
+	background-size: cover;
+	height: 100vh;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: @overlay;
+		opacity: .5;
+	}
+	header {
+		width: 100%;
+		height: 7rem;
+		position: relative;
+		background: rgba(0,0,0,.3);
+		.hamburger, .cross {
+			display: none;
+			z-index: 100;
+		}
+		.cross {
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: transparent;
+			border: none;
+			outline: none;
+			font-size: 6rem;
+			color: @white;
+		}
+		.hamburger {
+			width: 4rem;
+			height: 3rem;
+			position: absolute;
+			top: 1.7rem;
+			right: 0;
+			background: transparent;
+			border: none;
+			outline: none;
+			span {
+				background: @white;
+				width: 25px;
+				height: 2px;
+				display: block;
+				position: absolute;
+				right: 0;
+				&:before, &:after {
+					background-color: @white;
+					content: '';
+					width: 25px;
+					height: 2px;
+					position: absolute;
+					right: 0;
+				}
+				&:before {
+					transform: translateY(-6px);
+				}
+				&:after {
+					transform: translateY(6px);
+				}
+			}
+		}
+		.logo {
+			h1 {
+				font-family: 'FORTE';
+				color: @white;
+				font-size: 2.4rem;
+				line-height: 3.5rem;
+			}
+		}
+		.nav {
+			position: absolute;
+			right: 0;
+			ul {
+				padding: 0;
+				list-style: none;
+				li {
+					font-family: 'ProximaNovaRegular';
+					display: inline-block;
+					margin-right: 4rem;
+					&:last-child {
+						margin-right: 0;
+					}
+					a {
+						text-decoration: none;
+						color: @pale-purple;
+						font-size: 1.4rem;
+						outline: none;
+						line-height: 6.5rem;
+						&:hover {
+							color: @white;
+							padding-bottom: 0.7rem;	
+							border-bottom: 3px solid @white; 
+						}
+					}
+				}
+			}
+		}	
+	}
+	&-text {
+		margin-top: 18rem;
+		margin-bottom: 2.5rem;
+		h2 {
+			color: @white;
+			font-size: 4.8rem;
+			line-height: 1.3;
+			text-transform: uppercase;
+			text-align: center;
+			font-family: 'ProximaNovaBold';
+		}
+	}
+	&-search {
+		position: relative;
+		&-form {
+			max-width: 43rem;
+			position: relative;
+			outline: none; 
+			&:focus {
+					outline: none;
+					border: none;
+				}
+			input {
+				position: relative;
+				width: 75%;
+				height: 5rem;
+				border-radius: 50px;
+				padding-left: 3rem; 
+				box-shadow: -3px 3px 10px rgba(0,0,0,.25);
+			}
+			button {
+				position: absolute;
+				border-radius: 50px;
+				width: 25%;
+				height: 5.6rem;
+				background: @purple;
+				border: none;
+				font-family: 'ProximaNovaBold';
+				font-size: 1.8rem;
+				color: @white;
+				text-transform: uppercase;
+				right: 2rem;
+				top: -3px;
+				&:focus {
+					outline: none;
+				}
+				i {
+					font-size: 2.5rem;
+				}
+			}
+		}
+	}	
+}
+
+.countries {
+	background: @bg-white;
+	&-header {
+		h3 {
+			margin-top: 6rem;
+			margin-bottom: 4rem;
+			text-transform: uppercase;
+			font-family: 'ProximaNovaBold';
+			font-size: 1.8rem;
+		}
+	}
+	&-form {
+		text-align: center;
+		margin-bottom: 5rem;
+		input {
+			width: 90%;
+			padding-left: 2rem;
+		}
+		form {
+			.first-input {
+				position: relative;
+				background: url(../img/icons/location.png) no-repeat 90%;
+			}
+			.second-input {
+				position: relative;
+				background: url(../img/icons/from_to.png) no-repeat 90%;
+			}
+			.third-input {
+				position: relative;
+				background: url(../img/icons/from_to.png) no-repeat 90%;
+			}
+			.fourth-input {
+				position: relative;
+				background: url(../img/icons/guests.png) no-repeat 90%;
+			}
+			button {
+				background: @purple;
+				border: none;
+				outline: none;
+				width: 66%;
+				letter-spacing: 1px;
+				height: 4rem;
+				color: @white;
+				text-transform: uppercase;
+				font-size: 1.4rem;
+				font-family: 'ProximaNovaBold';
+			}
+		}
+	}
+	&-photo {
+		.large {
+			max-width: 62rem;
+		}
+		&-box {
+			margin: 0 auto;
+			position: relative;
+			margin-bottom: 2rem;
+			width: 100%;
+			max-width: 30rem;
+			height: 30rem;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			.caption {
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: rgba(247,111,141,.5);
+				color: @white;
+				text-align: center;
+				&:hover {
+					opacity: 1;
+				}
+				.sign {
+					p {
+						font-size: 2.4rem;
+						font-family: 'ProximaNovaRegular';
+						margin-top: 2rem;
+					}
+					button {
+						margin-top: 9rem;
+						outline: none;
+						border: none;
+						background: transparent;
+						img {
+							box-shadow: none;
+							width: 4rem;
+							height: 4rem;
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+
+.hotels {
+	&-header {
+		margin-bottom: 4rem;
+		h3 {
+			font-size: 3rem;
+			font-family: 'ProximaNovaRegular';
+			color: @base-black;
+			margin-top: 7rem;
+		}
+		p {
+			font-size: 1.8rem;
+			font-family: 'ProximaNovaLight';
+			color: @gray;
+		}
+	}
+	&-switch {
+		button {
+			background: transparent;
+			border: none;
+			outline: none;
+			font-family: 'ProximaNovaRegular';
+			color: @gray;
+			font-size: 1.4rem;
+			padding: 1rem 5rem;
+			margin-bottom: 4.5rem;
+			&:hover {
+				color: @purple;
+				background: @white;
+				box-shadow: 0 0 15px rgba(0,0,0,.1);
+				border-radius: 50px;
+			}
+		}
+	}
+	&-photo {
+		&-text {
+			h4 {
+				font-size: 1.6rem;
+				font-family: 'ProximaNovaBold';
+				color: @base-black;
+			}
+			p {
+				font-family: 'ProximaNovaRegular';
+				font-size: 1.4rem;
+				color: @gray;
+			}
+			.price {
+				color: @purple;
+				font-size: 1.6rem;
+			}
+		}
+		img {
+			width: 20rem;
+			height: 18.5rem;
+			float: left;
+			margin-right: 2.5rem;
+			margin-bottom: 2rem;
+			box-shadow: 3px 3px 20px rgba(0,0,0,.25);
+		}
+	}
+}
+
+.something {
+	background: @bg-white;
+	padding-bottom: 10rem;
+	padding-top: 12rem;
+	&-content {
+		&-box {
+			background: @white;
+			margin: 0  auto 0 auto;
+			width: 90%;
+			max-width: 33rem;
+			height: 35rem;
+			box-shadow: 0 0 20px rgba(0,0,0,.1);
+			border-radius: 15px;
+			padding: 2.5rem;
+			padding-top: 1rem;
+			h5 {
+				color: @purple;
+				font-size: 2.4rem;
+				font-family: 'ProximaNovaBold';
+			}
+			.faq {
+				text-transform: uppercase;
+			}
+			p {
+				line-height: 1.4;
+				color: @base-black;
+				font-size: 1.4rem;
+				font-family: 'ProximaNovaRegular';
+			}
+			span {
+				font-size: 1.4rem;
+				color: @purple;
+				font-family: 'ProximaNovaRegular';
+			}
+			form {
+				position: relative;
+				input {
+					background: @another-white;
+					width: 100%;
+					text-transform: uppercase;
+					padding-left: 1.7rem;
+					box-shadow: none;
+					&::placeholder {
+						display: inline-block;
+						font-size: 1.6rem;
+						color: @base-black;
+					}
+				}
+				button {
+					background-color: transparent;
+					border: none;
+					outline: none;
+					i {
+						display: inline-block;
+						color: @purple;
+						font-size: 2.5rem;
+						position: absolute;
+						top: 15%;
+						right: 7%;
+						transform: rotate(5deg);
+					}
+				}
+			}
+		}
+	}
+}
+
+.footer {
+	padding-top: 4rem;
+	padding-bottom: 2rem;
+	&-label {
+		h1 {
+			color: @purple;
+			font-family: 'Forte';
+			font-size: 4rem;
+			line-height: 12rem;
+		}
+	}
+	&-content {
+		padding-left: 5rem;
+		p {
+			font-size: 1.4rem;
+			margin-bottom: 0.7rem;
+			font-family: 'ProximaNovaLight';
+			color: @base-black;
+			span {
+				color: @purple;
+				font-size: 1.8rem;
+				font-family: 'ProximaNovaRegular';
+			}
+		}
+	}
+	.line {
+		hr {
+			height: 1px;
+			width: 99%;
+			background: @pale-gray;		
+		}		
+	}
+	&-copyright {
+		padding-top: 1rem;
+		font-size: 1.4rem;
+		font-family: 'ProximaNovaLight';
+		color: @base-black;
+	}
+	&-social {
+		position: relative;
+		&-icons {
+			position: absolute;
+			right: 0;
+			i {
+				margin-left: 5px;
+				line-height: 4rem;
+				color: @pale-gray;
+				font-size: 3rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 479px){
+	input {
+		padding-top: 1.5rem;
+	}
+	html {
+		font-size: 6px;
+		.main {
+			&-text {
+				margin-top: 30%;
+				h2 {
+					line-height: 2;
+				}
+			}
+			&-search {
+				input {
+					padding-top: 1.5rem;
+				}
+			}
+			header {
+				.hamburger {
+					display: block;
+				}
+				.logo {
+					h1 {
+						line-height: 0;
+					}
+				}
+				.nav {
+					display: none;
+					position: fixed;
+					width: 100%;
+					height: 100vh;
+					left: 0;
+					top: 0;
+					background: rgba(0,0,0,.8);
+					z-index: 5;
+					text-align: center;
+					ul {
+						padding-top: 25%;
+						line-height: 4;
+						list-style: none;
+						li {
+							display: block;
+							a {
+								text-transform: uppercase;
+								transition: all 0.2s;
+								color: @purple;
+								font-size: 4rem;
+								&:hover {
+									color: @white;
+									padding-bottom: 0;	
+									border-bottom: 2px solid @white;
+								}
+							}
+						}
+					}
+				}
+			}	
+		}
+		.countries {
+			.fiveth, .sixth, .seventh {
+				display: none;
+			}
+			&-photo {
+				.large {
+					max-width: 40rem;
+				}
+				&-box {
+					max-width: 40rem;
+					.caption {
+						display: none;
+					}
+				}
+			}
+		}
+		.hotels {
+			&-photo {
+				.copy {
+					display: none;
+				}
+			}
+		}
+		.something {
+			&-content {
+				&-box {
+					margin: 0 auto 2rem;
+				}
+			}
+		}
+		.footer {
+			padding-top: 2rem;
+			.line {
+				hr {
+					margin: 2rem auto;
+					width: 88%;				
+				}
+			}
+			&-content {
+				.customer {
+					margin-left: -3rem;
+				}
+			}
+			&-copyright {
+				text-align: center;
+			}
+			&-social {
+				position: relative;
+				&-icons {
+					position: absolute;
+					left: 0;
+					i {
+						font-size: 4rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 480px) and (max-width: 767px){
+	input {
+		padding-top: 1.5rem;
+	}
+	html {
+		font-size: 7.5px;
+		.main {
+			&-text {
+				margin-top: 2%;
+			}
+			&-search {
+				input {
+					padding-top: 1rem;
+				}
+			}
+			header {
+				.hamburger {
+					display: block;
+				}
+				.logo {
+					h1 {
+						line-height: 2rem;
+					}
+				}
+				.nav {
+					display: none;
+					position: fixed;
+					width: 100%;
+					height: 100vh;
+					left: 0;
+					top: 0;
+					background: rgba(0,0,0,.8);
+					z-index: 5;
+					text-align: center;
+					ul {
+						padding-top: 5%;
+						line-height: 2;
+						list-style: none;
+						li {
+							display: block;
+							a {
+								text-transform: uppercase;
+								transition: all 0.2s;
+								color: @purple;
+								font-size: 4rem;
+								&:hover {
+									color: @white;
+									padding-bottom: 0;	
+									border-bottom: 2px solid @white;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.countries {
+			.fiveth, .sixth, .seventh {
+				display: none;
+			}
+			&-photo {
+				.large {
+					max-width: 37rem;
+				}
+				&-box {
+					max-width: 37rem;
+					.caption {
+						display: none;
+					}
+				}
+			}
+		}
+		.hotels {
+			&-photo {
+				.copy {
+					display: none;
+				}
+			}
+		}
+		.something {
+			&-content {
+				&-box {
+					margin: 0 auto 2rem;
+				}
+			}
+		}
+		.footer {
+			padding-top: 2rem;
+			.line {
+				hr {
+					margin: 2rem auto;
+					width: 83%;				
+				}
+			}
+			&-content {
+				.customer {
+
+				}
+				.destinasi {
+					margin-left: 3rem;
+				}
+				.wahana {
+					margin-left: 3rem;
+				}
+			}
+			&-copyright {
+				text-align: center;
+			}
+			&-social {
+				position: relative;
+				&-icons {
+					position: absolute;
+					left: 0;
+					i {
+						font-size: 4rem;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	html {
+		font-size: 8px;
+		.countries {
+			.third {
+				display: none;
+			}
+			&-photo {
+				.large {
+					max-width: 40rem;
+				}
+				&-box {
+					max-width: 40rem;
+					.caption {
+						display: none;
+					}
+				}
+			}
+		}
+		.hotels {
+			&-photo {
+				.copy {
+					display: none;
+				}
+			}
+		}
+		.footer {
+			padding-top: 2rem;
+			.line {
+				hr {
+					margin: 2rem auto;
+					width: 83%;				
+				}
+			}
+			&-content {
+				.customer {
+
+				}
+				.destinasi {
+					margin-left: 3rem;
+				}
+				.wahana {
+					margin-left: 3rem;
+				}
+			}
+			&-copyright {
+				text-align: center;
+			}
+			&-social {
+				position: relative;
+				&-icons {
+					position: absolute;
+					left: 0;
+					i {
+						font-size: 4rem;
+					}
+				}
+			}
+		}
+	}
+	form {
+		input {
+		box-shadow: 0 0 10px rgba(0,0,0,.05);
+		}
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	html {
+		font-size: 11px;
+	}
+}
+@media (min-width: 1200px) and (max-width: 1600px) {
+	html {
+		font-size: 12px;
+	}
+}
